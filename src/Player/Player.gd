@@ -13,6 +13,11 @@ export var jump_height : float = 0
 var velocity := Vector2.ZERO
 var direction = 1
 
+
+func _ready() -> void:
+	add_to_group(Groups.player)
+
+
 func get_input() -> float:
 	return (
 		Input.get_action_raw_strength("ui_right")
