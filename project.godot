@@ -53,6 +53,11 @@ _global_script_classes=[ {
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://src/StateMachine/StateMachine.gd"
+}, {
+"base": "Control",
+"class": "UILevel",
+"language": "GDScript",
+"path": "res://src/UI/UILevel/UILevel.gd"
 } ]
 _global_script_class_icons={
 "AirState": "",
@@ -63,7 +68,8 @@ _global_script_class_icons={
 "PlayerState": "",
 "RunState": "",
 "State": "",
-"StateMachine": ""
+"StateMachine": "",
+"UILevel": ""
 }
 
 [application]
