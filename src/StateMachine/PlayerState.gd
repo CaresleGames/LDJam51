@@ -7,3 +7,4 @@ func _ready() -> void:
 	yield(owner, "ready")
 	
 	player = owner as Player
+	
