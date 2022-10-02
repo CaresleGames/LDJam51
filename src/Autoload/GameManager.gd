@@ -16,7 +16,11 @@ func _on_level_restart() -> void:
 
 func _on_level_complete() -> void:
 	var timers = get_tree().get_nodes_in_group(Groups.game_timer)
+	var levels = get_tree().get_nodes_in_group(Groups.level)
 	if timers.size() > 0:
 		var timer : GameTimer = timers[0]
 		print('level complete')
 		timer.emit_signal("stop_timer")
+	if levels.size() > 0:
+		var level : Level = levels[0]
+		level.emit_signal("level_end")

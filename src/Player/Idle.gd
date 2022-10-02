@@ -6,6 +6,9 @@ func enter(_msg := {}) -> void:
 
 
 func physics_update(_delta: float) -> void:
+	if player.is_complete:
+		return
+		
 	player.velocity = player.move_and_slide(player.velocity, Vector2.UP)
 	
 	var input_x := player.get_input()

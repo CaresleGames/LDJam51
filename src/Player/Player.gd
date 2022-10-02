@@ -13,6 +13,14 @@ export var jump_height : float = 0
 var velocity := Vector2.ZERO
 var direction = 1
 
+var is_complete := false
+var can_jump := false
+
+onready var raycast_group : Node2D = $RaycastGroup
+onready var raycast_left : RayCast2D = $RaycastGroup/Left
+onready var raycast_center : RayCast2D = $RaycastGroup/Center
+onready var raycast_right : RayCast2D = $RaycastGroup/Right
+
 
 func _ready() -> void:
 	add_to_group(Groups.player)
@@ -23,7 +31,16 @@ func get_input() -> float:
 		Input.get_action_raw_strength("ui_right")
 		- Input.get_action_raw_strength("ui_left")
 	)
-	
+
+
+func _physics_process(_delta: float) -> void:
+	for ray in raycast_group.get_children():
+		ray = ray as RayCast2D
+		ray.force_raycast_update()
+		if ray.is_colliding():
+			can_jump = true
+
+
 func velocity_apply(input: float, acc: float, fri: float) -> void:
 	if input > 0:
 		velocity.x = min(velocity.x + acc, speed)

@@ -9,6 +9,8 @@ func enter(msg := {}) -> void:
 	
 	
 func physics_update(delta : float) -> void:
+	if player.is_complete:
+		return
 	player.velocity.y += player.gravity * delta
 	
 	var input_x := player.get_input()
@@ -16,6 +18,8 @@ func physics_update(delta : float) -> void:
 	
 	player.velocity = player.move_and_slide(player.velocity, Vector2.UP)
 	
-	
 	if player.is_on_floor():
 		state_machine.transition_to("Run")
+	
+	if Input.is_action_just_pressed("ui_jump") and player.can_jump:
+		state_machine.transition_to("Air", {jump=true})

@@ -14,4 +14,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	label_timer.text = str(int(game_timer.time_left))
+	if not game_timer.is_stopped():
+		label_timer.text = str(int(game_timer.time_left))
+	else:
+		label_timer.text = str(int(game_timer.time_left_text))
