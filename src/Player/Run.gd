@@ -3,7 +3,7 @@ extends PlayerState
 
 func enter(_msg := {}) -> void:
 	print('run')
-	
+	player.anim.play("Run")
 	
 func physics_update(_delta: float) -> void:
 	if player.is_complete:
@@ -16,6 +16,7 @@ func physics_update(_delta: float) -> void:
 		state_machine.transition_to("Idle")
 	
 	if not player.is_on_floor():
+		print('is not in floor')
 		state_machine.transition_to("Air")
 		
 	if Input.is_action_just_pressed("ui_jump"):

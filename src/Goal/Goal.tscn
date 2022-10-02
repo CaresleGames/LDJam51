@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/16x16.png" type="Texture" id=1]
+[ext_resource path="res://assets/goal.png" type="Texture" id=1]
 [ext_resource path="res://src/Goal/Goal.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]

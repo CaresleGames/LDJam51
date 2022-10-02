@@ -4,3 +4,6 @@
 
 [node name="Level1" instance=ExtResource( 1 )]
 next_level = "res://src/Levels/Level2.tscn"
+
+[node name="Player" parent="." index="4"]
+position = Vector2( 32, 128 )

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Objects/GameObject.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/32x32.png" type="Texture" id=3]
+[ext_resource path="res://assets/instakilll.png" type="Texture" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "class_name DangerObject
@@ -15,10 +15,9 @@ func _on_DangerObject_body_entered(body: KinematicBody2D) -> void:
 "
 
 [node name="DangerObject" instance=ExtResource( 1 )]
-modulate = Color( 0.811765, 0.192157, 0.192157, 1 )
 script = SubResource( 1 )
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_DangerObject_body_entered"]

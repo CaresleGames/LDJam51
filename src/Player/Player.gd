@@ -21,6 +21,8 @@ onready var raycast_left : RayCast2D = $RaycastGroup/Left
 onready var raycast_center : RayCast2D = $RaycastGroup/Center
 onready var raycast_right : RayCast2D = $RaycastGroup/Right
 
+onready var anim : AnimationPlayer = $Anim
+onready var sprite : Sprite = $Sprite
 
 func _ready() -> void:
 	add_to_group(Groups.player)
@@ -33,7 +35,7 @@ func get_input() -> float:
 	)
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	for ray in raycast_group.get_children():
 		ray = ray as RayCast2D
 		ray.force_raycast_update()
@@ -41,6 +43,7 @@ func _physics_process(_delta: float) -> void:
 			can_jump = true
 		else:
 			can_jump = false
+			
 
 
 func velocity_apply(input: float, acc: float, fri: float) -> void:
@@ -52,3 +55,4 @@ func velocity_apply(input: float, acc: float, fri: float) -> void:
 		direction = -1
 	else:
 		velocity.x = lerp(velocity.x, 0, fri)
+	sprite.scale.x = direction
