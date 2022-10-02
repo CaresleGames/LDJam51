@@ -39,6 +39,8 @@ func _physics_process(_delta: float) -> void:
 		ray.force_raycast_update()
 		if ray.is_colliding():
 			can_jump = true
+		else:
+			can_jump = false
 
 
 func velocity_apply(input: float, acc: float, fri: float) -> void:
