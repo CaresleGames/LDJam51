@@ -3,11 +3,9 @@ extends PlayerState
 
 func enter(msg := {}) -> void:
 	print('air state')
-	player.anim.play("Air")
 	if msg.has("jump"):
 		if msg["jump"]:
 			player.velocity.y = -player.jump_height
-			player.anim.play("Jump")
 	
 	
 func physics_update(delta : float) -> void:

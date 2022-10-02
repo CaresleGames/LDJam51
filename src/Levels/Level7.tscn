@@ -5,8 +5,9 @@
 [ext_resource path="res://src/Objects/DangerObject/DangerSmallObject.tscn" type="PackedScene" id=3]
 
 [node name="Level7" instance=ExtResource( 1 )]
+next_level = "res://src/UI/Final/Final.tscn"
 
-[node name="TileMapLevel" parent="." index="1"]
+[node name="TileMapLevel" parent="." index="2"]
 tile_data = PoolIntArray( 0, 17, 0, 1, 23, 0, 2, 23, 0, 3, 23, 0, 4, 23, 0, 5, 23, 0, 6, 23, 0, 7, 23, 0, 8, 23, 0, 9, 23, 0, 10, 23, 0, 11, 23, 0, 12, 23, 0, 13, 23, 0, 14, 18, 0, 65536, 21, 0, 65550, 22, 0, 131072, 21, 0, 131086, 22, 0, 196608, 21, 0, 196622, 22, 0, 262144, 21, 0, 262158, 22, 0, 327680, 19, 0, 327681, 12, 0, 327682, 12, 0, 327683, 12, 0, 327684, 12, 0, 327685, 12, 0, 327686, 12, 0, 327687, 28, 0, 327690, 26, 0, 327694, 22, 0, 393216, 17, 0, 393217, 23, 0, 393218, 23, 0, 393219, 23, 0, 393220, 23, 0, 393221, 23, 0, 393222, 23, 0, 393223, 30, 0, 393230, 22, 0, 458752, 21, 0, 458764, 27, 0, 458765, 12, 0, 458766, 20, 0, 524288, 21, 0, 524300, 22, 0, 524301, 16, 0, 524302, 16, 0, 589824, 19, 0, 589825, 12, 0, 589826, 12, 0, 589827, 12, 0, 589828, 12, 0, 589829, 12, 0, 589830, 12, 0, 589831, 12, 0, 589832, 12, 0, 589833, 12, 0, 589834, 12, 0, 589835, 12, 0, 589836, 20, 0, 589837, 16, 0, 589838, 16, 0 )
 
 [node name="DangerSmallObject" parent="DangerObjects" index="0" instance=ExtResource( 3 )]
@@ -18,5 +19,5 @@ position = Vector2( 151, 112 )
 [node name="DangerObject" parent="DangerObjects" index="2" instance=ExtResource( 2 )]
 position = Vector2( 143, 80 )
 
-[node name="Goal" parent="." index="4"]
+[node name="Goal" parent="." index="5"]
 position = Vector2( 24, 32 )

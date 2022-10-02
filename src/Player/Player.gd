@@ -21,8 +21,6 @@ onready var raycast_left : RayCast2D = $RaycastGroup/Left
 onready var raycast_center : RayCast2D = $RaycastGroup/Center
 onready var raycast_right : RayCast2D = $RaycastGroup/Right
 
-onready var anim : AnimationPlayer = $Anim
-onready var sprite : Sprite = $Sprite
 
 func _ready() -> void:
 	add_to_group(Groups.player)
@@ -55,4 +53,3 @@ func velocity_apply(input: float, acc: float, fri: float) -> void:
 		direction = -1
 	else:
 		velocity.x = lerp(velocity.x, 0, fri)
-	sprite.scale.x = direction

@@ -87,6 +87,7 @@ _global_script_class_icons={
 [application]
 
 config/name="LDJam51"
+run/main_scene="res://src/UI/Title/Title.tscn"
 config/icon="res://icon.png"
 
 [autoload]

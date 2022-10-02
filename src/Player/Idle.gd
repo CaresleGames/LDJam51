@@ -3,7 +3,6 @@ extends PlayerState
 
 func enter(_msg := {}) -> void:
 	player.velocity = Vector2.ZERO
-	player.anim.play("Idle")
 
 
 func physics_update(_delta: float) -> void:

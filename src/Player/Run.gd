@@ -3,7 +3,7 @@ extends PlayerState
 
 func enter(_msg := {}) -> void:
 	print('run')
-	player.anim.play("Run")
+	
 	
 func physics_update(_delta: float) -> void:
 	if player.is_complete:
